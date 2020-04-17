@@ -60,5 +60,29 @@ function cardCreater(item) {
   const cardImg = document.createElement('img');
   const cardInfo = document.createElement('div');
   const name = document.createElement('h3');
-  
+  const username = document.createElement('p');
+  const location = document.createElement('p');
+  const profile = document.createElement('p');
+  const profileLink = document.createElement('a');
+  const followers = document.createElement('p');
+  const following = document.createElement('p');
+  const bio = document.createElement('p');
+
+ //classes- add back
+ card.classList.add('card');
+ cardInfo.classList.add('card-info');
+ name.classList.add('name');
+ username.classList.add('username');
+
+ cardImg.src =item.avatar_url;
+ cardImg.alt = 'github user';
+ name.textContent =item.name;
+ username.textContent =item.login;
+ location.textContent =item.location;
+ profile.textContent =`Profile:`;
+ profileLink.href = item.html_url;
+ profileLink.textContent =item.html_url;
+ followers.textContent =`Folloers: ${item.followers}`;
+ following.textContent =`Following: ${item.following}`;
+ bio.textContent = `Bio: ${item.bio}`;
 }
