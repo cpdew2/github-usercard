@@ -77,10 +77,10 @@ axios
 */
 
 function cardCreater(item) {
-  //create elements
+  //elements
   const card = document.createElement('div');
   const cardImg = document.createElement('img');
-  const cardInfo = document.createElement('div');
+  const cardInfo= document.createElement('div');
   const name = document.createElement('h3');
   const username = document.createElement('p');
   const location = document.createElement('p');
@@ -90,36 +90,35 @@ function cardCreater(item) {
   const following = document.createElement('p');
   const bio = document.createElement('p');
 
- //classes- add back
- card.classList.add('card');
- cardInfo.classList.add('card-info');
- name.classList.add('name');
- username.classList.add('username');
+  //adding back the classes
+  card.classList.add('card');
+  cardInfo.classList.add('card-info');
+  name.classList.add('name');
+  username.classList.add('username');
 
- cardImg.src =item.avatar_url;
- cardImg.alt = 'github user';
- name.textContent =item.name;
- username.textContent =item.login;
- location.textContent =item.location;
- profile.textContent =`Profile:`;
- profileLink.href = item.html_url;
- profileLink.textContent =item.html_url;
- followers.textContent =`Folloers: ${item.followers}`;
- following.textContent =`Following: ${item.following}`;
- bio.textContent = `Bio: ${item.bio}`;
+  cardImg.src = item.avatar_url;
+  cardImg.alt = 'github user';
+  name.textContent = item.name;
+  username.textContent = item.login;
+  location.textContent = item.location;
+  profile.textContent = `Profile:`;
+  profileLink.href = item.html_url;
+  profileLink.textContent = item.html_url;
+  followers.textContent = `Followers: ${item.followers}`;
+  following.textContent = `Following: ${item.following}`;
+  bio.textContent = `Bio: ${item.bio}`;
 
- //append items
- card.appendChild(cardImg);
- card.appendChild(cardInfo);
- cardInfo.appendChild(name);
- cardInfo.appendChild(usersname);
- cardInfo.appendChild(location);
- cardInfo.appendChild(profile);
- cardInfo.appendChild(followers);
- cardInfo.appendChild(following);
- cardInfo.appendChild(bio);
- profile.appendChild(profileLink);
-
+   //appending items to where they need to be appended to the DOM
+   card.appendChild(cardImg);
+   card.appendChild(cardInfo);
+   cardInfo.appendChild(name);
+   cardInfo.appendChild(username);
+   cardInfo.appendChild(location);
+   cardInfo.appendChild(profile);
+   cardInfo.appendChild(followers);
+   cardInfo.appendChild(following);
+   cardInfo.appendChild(bio);
+   profile.appendChild(profileLink);
+ 
  return card;
-
 }
