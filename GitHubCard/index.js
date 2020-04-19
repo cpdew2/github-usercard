@@ -5,26 +5,25 @@
 
 const cardFromIndex = document.querySelector('.cards');
 
-const followersArray = ['tetondan', 'dustinmyers','justsml', 'luishrd', 'bigknell'];
+const followersArray = ['tetondan','dustinmyers','justsml','luishrd','bigknell'];
 
 axios
   .get("https://api.github.com/users/cpdew2").then((res) => {
-    const user = res.data;
-    const newCard = cardCreater(user);
-    cardFromIndex.appendChild(newCard);
+  const user = res.data;
+  const newCard = cardCreater(user);
+  cardFromIndex.appendChild(newCard);
   })
-
   .catch((err) => console.log(err));
-
+ 
   followersArray.forEach((user) => {
     axios.get(`https://api.github.com/users/${user}`)
-    .then(res => {
+     .then(res => {
       const data = res.data;
-      const newCard = cardCreater(data);
-      cardFromIndex.appendChild(newCard)
-    })
-    .catch((err) => console.log(err))
-  })
+       const newCard = cardCreater(data);
+       cardFromIndex.appendChild(newCard)
+     })
+     .catch((err) => console.log(err))
+   })
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -47,7 +46,7 @@ axios
           user, and adding that card to the DOM.
 */
 
-const followersArray = ['tetondan','dustinmyers','justsml','luishrd','bigknell'];
+
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
