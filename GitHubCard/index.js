@@ -85,4 +85,19 @@ function cardCreater(item) {
  followers.textContent =`Folloers: ${item.followers}`;
  following.textContent =`Following: ${item.following}`;
  bio.textContent = `Bio: ${item.bio}`;
+
+ //append items
+ card.appendChild(cardImg);
+ card.appendChild(cardInfo);
+ cardInfo.appendChild(name);
+ cardInfo.appendChild(usersname);
+ cardInfo.appendChild(location);
+ cardInfo.appendChild(profile);
+ cardInfo.appendChild(followers);
+ cardInfo.appendChild(following);
+ cardInfo.appendChild(bio);
+ profile.appendChild(profileLink);
+
+ return card;
+
 }
