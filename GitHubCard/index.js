@@ -3,6 +3,29 @@
            https://api.github.com/users/<your name>
 */
 
+const cardFromIndex = document.querySelector('.cards');
+
+const followersArray = ['tetondan', 'dustinmyers','justsml', 'luishrd', 'bigknell'];
+
+axios
+  .get("https://api.github.com/users/cpdew2").then((res) => {
+    const user = res.data;
+    const newCard = cardCreater(user);
+    cardFromIndex.appendChild(newCard);
+  })
+
+  .catch((err) => console.log(err));
+
+  followersArray.forEach((user) => {
+    axios.get(`https://api.github.com/users/${user}`)
+    .then(res => {
+      const data = res.data;
+      const newCard = cardCreater(data);
+      cardFromIndex.appendChild(newCard)
+    })
+    .catch((err) => console.log(err))
+  })
+
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
